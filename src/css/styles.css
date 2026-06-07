@@ -8,11 +8,159 @@
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
-@import url('./animations.css');
-
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
 @import url('./back-link.css');
-@import url('./footer.css');
+/* ==================== Спільні стилі ==================== */
+main {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #4e75ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Навігація на головній сторінці index.html */
+.navigation {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.navigation a {
+  display: block;
+  padding: 10px 20px;
+  background-color: #4e75ff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 250ms ease;
+}
+
+.navigation a:hover {
+  background-color: #3b5edb;
+}
+
+/* ==================== Завдання 1: Таймер ==================== */
+.timer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+#datetime-picker {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  width: 280px;
+}
+
+#datetime-picker:focus {
+  border-color: #4e75ff;
+}
+
+button[data-start] {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4e75ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[data-start]:disabled {
+  background-color: #cfcfcf;
+  color: #989898;
+  cursor: not-allowed;
+}
+
+.timer {
+  display: flex;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.timer .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer .value {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.timer .label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4e4e4e;
+}
+
+/* ==================== Завдання 2: Снекбар ==================== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 360px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.form input[type='number'] {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+
+fieldset {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+fieldset legend {
+  padding: 0 8px;
+}
+
+fieldset label {
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form button[type='submit'] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4e75ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form button[type='submit']:hover {
+  background-color: #3b5edb;
+}
