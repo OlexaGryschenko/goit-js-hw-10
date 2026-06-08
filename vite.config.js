@@ -1,18 +1,17 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
 
 export default defineConfig({
   root: 'src',
+  base: '/goit-js-hw-10/', // Додано базовий шлях для GitHub Pages
   build: {
     outDir: '../dist',
     emptyOutDir: true,
-    sourcemap: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index.html'),
-        timer: resolve(__dirname, 'src/1-timer.html'),
-        snackbar: resolve(__dirname, 'src/2-snackbar.html'),
-      },
-    },
-  },
+        main: './src/index.html',
+        timer: './src/1-timer.html',
+        snackbar: './src/2-snackbar.html'
+      }
+    }
+  }
 });
