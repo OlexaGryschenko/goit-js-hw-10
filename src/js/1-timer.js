@@ -1,10 +1,12 @@
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
 
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const startBtn = document.querySelector('button[data-start]');
+// Disable start button by default to prevent starting without a valid date
+startBtn.disabled = true;
 const daysVal = document.querySelector('[data-days]');
 const hoursVal = document.querySelector('[data-hours]');
 const minutesVal = document.querySelector('[data-minutes]');
@@ -20,7 +22,8 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     const chosenDate = selectedDates[0];
-    if (chosenDate < new Date()) {
+    // Reject dates that are in the past or exactly now
+    if (chosenDate <= new Date()) {
       iziToast.error({
         title: 'Error',
         message: 'Please choose a date in the future',
@@ -29,13 +32,19 @@ const options = {
       startBtn.disabled = true;
       userSelectedDate = null;
     } else {
+      // Valid future date — enable start and show confirmation
       startBtn.disabled = false;
       userSelectedDate = chosenDate;
+      iziToast.success({
+        title: 'OK',
+        message: 'Valid future date selected',
+        position: 'topRight',
+      });
     }
   },
 };
 
-flatpickr("#datetime-picker", options);
+flatpickr('#datetime-picker', options);
 
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
