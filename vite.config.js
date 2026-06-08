@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: 'src',
-  base: '/goit-js-hw-10/', // Додано базовий шлях для GitHub Pages
+  base: './', // Додано базовий шлях для GitHub Pages
   build: {
     outDir: '../dist',
     emptyOutDir: true,
